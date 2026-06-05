@@ -21,7 +21,7 @@ Student Copilot provides a centralized AI-powered workspace for opportunity trac
 - AI Career Recommendations
 
 ## Live Demo
-https://your-render-url.onrender.com
+https://student-copilot-1.onrender.com
 
 ## Authors
 Shivangi Gupta
