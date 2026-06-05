@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base Theme Configurations */
+:root {
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-muted: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent-glow: rgba(79, 70, 229, 0.05);
+}
+
+.dark-theme {
+  --bg-app: #090d16;
+  --bg-card: #111827;
+  --bg-card-muted: #1f2937;
+  --border-color: #374151;
+  --border-light: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --accent-glow: rgba(99, 102, 241, 0.15);
+}
+
+/* Apply CSS Variables with high-priority overrides for instant theme response */
+.dark-theme body, .dark-theme .bg-slate-50 {
+  background-color: var(--bg-app) !important;
+}
+
+.dark-theme .bg-white {
+  background-color: var(--bg-card) !important;
+}
+
+.dark-theme .bg-slate-50\/50, .dark-theme .bg-indigo-50\/30, .dark-theme .bg-slate-50\/70 {
+  background-color: var(--bg-card-muted) !important;
+}
+
+.dark-theme .text-slate-900, .dark-theme .text-slate-800 {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .text-slate-700, .dark-theme .text-slate-600 {
+  color: var(--text-secondary) !important;
+}
+
+.dark-theme .text-slate-500, .dark-theme .text-slate-400, .dark-theme .text-slate-450 {
+  color: var(--text-muted) !important;
+}
+
+.dark-theme .border-slate-100, 
+.dark-theme .border-slate-150, 
+.dark-theme .border-slate-200, 
+.dark-theme .border-slate-250 {
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme input, .dark-theme select, .dark-theme textarea {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme input:focus, .dark-theme select:focus, .dark-theme textarea:focus {
+  border-color: #6366f1 !important;
+  --tw-ring-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+.dark-theme aside {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme header {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme .hover\:bg-slate-50:hover {
+  background-color: var(--bg-card-muted) !important;
+}
+
+/* Beautiful Interactive Glass & Shimmer Effects */
+.glass-effect {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.dark-theme .glass-effect {
+  backdrop-filter: blur(12px);
+  background: rgba(17, 24, 39, 0.75);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hover Accent Borders */
+.premium-border-glow {
+  transition: all 0.3s ease;
+}
+.premium-border-glow:hover {
+  border-color: rgba(99, 102, 241, 0.4) !important;
+  box-shadow: 0 4px 20px -2px var(--accent-glow);
+}
+
+/* Dark Theme Specific Overrides for Chat Interface to Guarantee Contrast & High Readability */
+.dark-theme .bg-slate-100 {
+  background-color: var(--bg-card-muted) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Force all text inside AI message bubbles (which has text-slate-800/850 or similar) to be white/off-white */
+.dark-theme .bg-slate-100,
+.dark-theme .bg-slate-100 p,
+.dark-theme .bg-slate-100 span,
+.dark-theme .bg-slate-100 * {
+  color: #f3f4f6 !important;
+}
+
+/* Customize typing animation indicator bubbles in dark theme */
+.dark-theme .bg-slate-100 span.bg-slate-400 {
+  background-color: #9ca3af !important;
+}
+
+/* Ensure placeholder and typed text on chat input fields are perfectly legible */
+.dark-theme input[type="text"]::placeholder,
+.dark-theme textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+.dark-theme input[type="text"],
+.dark-theme textarea {
+  color: #f9fafb !important;
+  background-color: var(--bg-card-muted) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Keep chat UI general header and system texts legible */
+.dark-theme .text-slate-650,
+.dark-theme .text-slate-600 {
+  color: var(--text-secondary) !important;
+}
+
+.dark-theme .text-slate-800,
+.dark-theme .text-slate-900 {
+  color: var(--text-primary) !important;
+}
+
+/* --- PREMIUM THEMING COLOR REFINEMENTS --- */
+
+/* Sidebar active navigation tabs: Elegant gradient with deep branding borders */
+.bg-indigo-50 {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(99, 102, 241, 0.02) 100%) !important;
+  border-left: 3px solid #6366f1 !important;
+  color: #4f46e5 !important;
+}
+
+.dark-theme .bg-indigo-50 {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.22) 0%, rgba(79, 70, 229, 0.04) 100%) !important;
+  border-left: 3px solid #818cf8 !important;
+  color: #c7d2fe !important;
+}
+
+/* Beautiful color enhancements for custom status chips & indicators */
+.bg-indigo-100 {
+  background-color: rgba(99, 102, 241, 0.12) !important;
+  color: #4f46e5 !important;
+}
+.dark-theme .bg-indigo-100, .dark-theme .bg-indigo-100\/60 {
+  background-color: rgba(99, 102, 241, 0.25) !important;
+  color: #a5b4fc !important;
+}
+
+/* Dynamic progress bars & primary accents */
+.bg-indigo-600 {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
+}
+.dark-theme .bg-indigo-600 {
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%) !important;
+}
+
+/* Career Gap / Amber alert color palettes */
+.bg-amber-50, .bg-amber-50\/40 {
+  background-color: rgba(180, 83, 9, 0.03) !important;
+  border-color: rgba(180, 83, 9, 0.15) !important;
+}
+.dark-theme .bg-amber-50\/40, .dark-theme .bg-amber-50\/20 {
+  background-color: rgba(245, 158, 11, 0.06) !important;
+  border-color: rgba(180, 83, 9, 0.25) !important;
+}
+
+.text-amber-700 {
+  color: #b45309 !important;
+}
+.dark-theme .text-amber-700, .dark-theme .text-amber-800 {
+  color: #f59e0b !important;
+}
+
+.bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  color: #b45309 !important;
+}
+.dark-theme .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: #fbbf24 !important;
+}
+
+/* Missed milestones / Red alert highlights */
+.bg-rose-50 {
+  background-color: rgba(220, 38, 38, 0.03) !important;
+  border-color: rgba(220, 38, 38, 0.15) !important;
+}
+.dark-theme .bg-rose-50 {
+  background-color: rgba(239, 68, 68, 0.05) !important;
+  border-color: rgba(239, 68, 68, 0.22) !important;
+}
+.text-rose-700 {
+  color: #dc2626 !important;
+}
+.dark-theme .text-rose-700 {
+  color: #fca5a5 !important;
+}
+
+/* Successfully completed / Emerald highlights */
+.bg-emerald-50 {
+  background-color: rgba(5, 150, 105, 0.03) !important;
+  border-color: rgba(5, 150, 105, 0.15) !important;
+}
+.dark-theme .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.05) !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+.text-emerald-700 {
+  color: #059669 !important;
+}
+.dark-theme .text-emerald-700 {
+  color: #6ee7b7 !important;
+}
+
+/* Elegant borders and crisp shadows across cards */
+.border-slate-100 {
+  border-color: var(--border-light) !important;
+}
+.border-slate-150, .border-slate-200 {
+  border-color: var(--border-color) !important;
+}
+
+/* Input Fields Focus Indicator glow */
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12) !important;
+}
+.dark-theme input:focus, .dark-theme select:focus, .dark-theme textarea:focus {
+  border-color: #818cf8 !important;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25) !important;
+}
+
+/* Smooth motion for hoverable items as visual feedback */
+button, select, input, a {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+
+

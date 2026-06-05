@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Student Copilot",
+  "description": "An AI-powered personal memory agent and chief of staff that acts as a student\u0027s second brain to help manage hackathons, fellowships, internships, competencies, tasks, and daily check-ins.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
