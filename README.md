@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
 
-# Run and deploy your AI Studio app
+# 🎓 Student Copilot
 
-This contains everything you need to run your app locally.
+Student Copilot is an AI-powered productivity platform designed to help students manage opportunities, teams, tasks, deadlines, and academic activities from a single dashboard.
 
-View your app in AI Studio: https://ai.studio/apps/399d1a90-1991-4dbc-b772-7fff0934cb52
+## 🚀 Features
 
-## Run Locally
+- 🔐 User Authentication (Login, Register, Forgot Password)
+- 🤖 Gemini AI Assistant
+- 📅 Opportunity Tracking
+- 👥 Team Management
+- ✅ Task Management
+- 📝 Daily Check-ins
+- 📊 Weekly AI Reports
+- 🔔 Notifications
+- 🧠 Memory & Notes Storage
+- 📈 Student Dashboard Analytics
+- 🎯 Demo Account for Presentation
 
-**Prerequisites:**  Node.js
+## 🛠️ Tech Stack
 
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Backend
+- Node.js
+- Express.js
+
+### AI
+- Google Gemini API
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/
+├── pages/
+├── server/
+├── hooks/
+├── types/
+└── utils/
+
+server.ts
+package.json
