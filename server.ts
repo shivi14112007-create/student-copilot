@@ -1,4 +1,5 @@
-/**
+
+ /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -11,7 +12,7 @@ import { db } from './src/server/db.js';
 import { processStudentMessage, runAISummaryEngine, aiParseOpportunity, aiParseTeamFromMessage, aiParseTeamFromPhoto, aiParseTaskFromMessage } from './src/server/gemini.js';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json({ limit: '10mb' }));
 
